@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO PRINCIPAL -->
+    <title>Control de Plagas y Fumigaciones | Jáchal e Iglesia Fumigación</title>
+    <meta name="description" content="Desinsectación y desratización en zonas rurales, urbanas, comerciales e industriales en Jáchal e Iglesia. Habilitación oficial de San Juan.">
+    <meta name="keywords" content="Fumigación Jáchal, Fumigación Iglesia, Control de Plagas Jáchal, Desinsectación San Juan, Sanidad Vegetal San Juan, Desratización Jáchal e Iglesia">
+    <meta name="author" content="Jáchal Fumigación">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO LOCAL / GEOLOCALIZACIÓN -->
+    <meta name="geo.region" content="AR-J">
+    <meta name="geo.placename" content="San José de Jáchal, San Juan, Argentina">
+    <meta name="geo.position" content="-30.2406;-68.7469">
+    <meta name="ICBM" content="-30.2406, -68.7469">
+
+    <!-- OPEN GRAPH / SOCIAL MEDIA -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jáchal Fumigación - Control de Plagas Habilitado en Jáchal e Iglesia">
+    <meta property="og:description" content="Desinsectación y desratización en zonas rurales, urbanas, comerciales e industriales. Habilitados por Sanidad Vegetal.">
+    <meta property="og:image" content="img/logo.jpeg">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- FAVICONS COMPATIBLES -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <meta name="theme-color" content="#1D3B6C">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --color-verde-jf: #7FA032;
+            --color-verde-oscuro: #5C7622;
+            --color-amarillo-jf: #F2CB05;
+            --color-azul-jf: #1D3B6C;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--color-azul-jf);
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .nav-link:hover {
+            color: var(--color-amarillo-jf) !important;
+        }
+
+        /* Icono hamburguesa blanco forzado */
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+        .custom-toggler {
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-verde-jf), var(--color-verde-oscuro));
+            color: white;
+            padding: 20px 0 50px 0;
+        }
+
+        /* Botones personalizados */
+        .btn-jf-amarillo {
+            background-color: var(--color-amarillo-jf);
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-jf-amarillo:hover {
+            background-color: #dcb300;
+            color: #000;
+        }
+
+        /* Cards de Servicios */
+        .card-servicio {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--color-verde-jf);
+        }
+        .card-servicio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Galería de Imágenes */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(29, 59, 108, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Botón Flotante de WhatsApp (Derecha - Estilo Clásico) */
+        .btn-wsp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .btn-wsp:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Botón Flotante Volver Arriba (Izquierda) */
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-azul-jf);
+            color: #ffffff !important;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .btn-back-to-top:hover {
+            background-color: var(--color-verde-jf);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-azul-jf);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA Y MENÚ NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow" id="top">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2" href="#inicio" title="Jáchal Fumigación Inicio">
+                    <!-- SVG ESCUDO NAVBAR -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#F2CB05" viewBox="0 0 16 16">
+                        <path d="M5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43C2.844 1.215 3.962.86 5.072.56z"/>
+                        <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                    JÁCHAL FUMIGACIÓN
+                </a>
+                <button class="navbar-toggler custom-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center gap-1" href="#inicio">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                </svg>
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="#nosotros">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43C2.844 1.215 3.962.86 5.072.56z"/>
+                                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="#servicios">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5 3C3.9 3 3 3.9 3 5V18C3 19.1 3.9 20 5 20H11C12.1 20 13 19.1 13 18V5C13 3.9 12.1 3 11 3H5ZM15 4C15 3.45 15.45 3 16 3H18C18.55 3 19 3.45 19 4V6H15V4Z"/>
+                                </svg>
+                                Servicios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="#galeria">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M4.502 1a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm-1-1A2 2 0 0 0 1.502 2v15a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                </svg>
+                                Galería
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="#cobertura">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/>
+                                </svg>
+                                Cobertura
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="#contacto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- SECCIÓN INICIO / HERO -->
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7 mb-4 mb-md-0">
+                        <h1 class="display-4 fw-bold">Soluciones Profesionales en Fumigación y Control de Plagas</h1>
+                        <p class="lead my-3">Protegemos tu hogar, comercio, fincas e instituciones en los departamentos de <strong>Jáchal e Iglesia</strong> con tratamientos seguros y garantizados.</p>
+                        
+                        <!-- TEXTO DE HABILITACIÓN CORREGIDO CON FLUJO NATURAL -->
+                        <p class="fs-6 text-white fw-bold mb-3" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                            <i class="bi bi-patch-check-fill text-warning fs-5 align-middle me-1"></i> Habilitados por la <strong>Dirección de Sanidad Vegetal, Animal y Alimentos de la Provincia de San Juan</strong>.
+                        </p>
+                        
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="https://wa.me/5492644154299?text=Hola,%20necesito%20un%20presupuesto" class="btn btn-jf-amarillo btn-lg shadow d-flex align-items-center gap-2" target="_blank" rel="noopener">
+                                <i class="bi bi-whatsapp fs-5"></i>
+                                Solicitar Presupuesto
+                            </a>
+                            <a href="#contacto" class="btn btn-outline-light btn-lg d-flex align-items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 text-center">
+                        <div class="p-4 rounded-4 bg-white text-dark shadow-lg border border-3 border-warning">
+                            <img src="img/logo.jpeg" alt="Logo Oficial Jáchal Fumigación Control de Plagas San Juan" class="img-fluid rounded-3 mb-3 shadow-sm" style="max-height: 220px; object-fit: contain;">
+                            <h2 class="fw-bold fs-4 text-dark">Servicio rápido, limpio y efectivo</h2>
+                            <p class="text-muted small mb-3">Llamanos para consultar de inmediato</p>
+                            <a href="tel:2644154299" class="btn btn-success fw-bold w-100 fs-5 shadow-sm d-flex align-items-center justify-content-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                </svg>
+                                2644154299
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS -->
+        <section id="nosotros" class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="fw-bold text-success mb-3 d-flex align-items-center gap-2">
+                            <!-- SVG ESCUDO CON CHECK -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#198754" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43C2.844 1.215 3.962.86 5.072.56z"/>
+                                <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            Compromiso con la Comunidad
+                        </h2>
+                        <p class="fs-5 text-secondary">En <strong>Jáchal Fumigación</strong> nos dedicamos a brindar tranquilidad y salud a las familias, comercios y productores de la región.</p>
+                        <p class="text-secondary">Contamos con <strong>Habilitación Oficial por la Dirección de Sanidad Vegetal, Animal y Alimentos de la Provincia de San Juan</strong>. Utilizamos productos autorizados de alta eficacia y bajo nivel de toxicidad para personas y mascotas, garantizando erradicación de plagas sin poner en riesgo tu entorno.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row g-3">
+                            <!-- TARJETA HABILITACIÓN -->
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded shadow-sm text-center h-100 d-flex flex-column justify-content-center align-items-center border-top border-3 border-success">
+                                    <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#198754" viewBox="0 0 16 16">
+                                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                                    </svg>
+                                    <h3 class="fw-bold fs-5">Habilitados</h3>
+                                    <p class="small text-muted mb-0">Por la Dirección de Sanidad Vegetal, Animal y Alimentos de San Juan.</p>
+                                </div>
+                            </div>
+                            <!-- TARJETA CONFIABILIDAD -->
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded shadow-sm text-center h-100 d-flex flex-column justify-content-center align-items-center border-top border-3 border-primary">
+                                    <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#0d6efd" viewBox="0 0 16 16">
+                                        <path d="M8 0a.5.5 0 0 1 .416.223l3 4.5A.5.5 0 0 1 11 5.5h-.832l2.248 3.372A.5.5 0 0 1 12 9.5h-.832l2.248 3.372A.5.5 0 0 1 13 13.5H9v2.5a.5.5 0 0 1-1 0V13.5H3a.5.5 0 0 1-.416-.778L4.832 9.35H4a.5.5 0 0 1-.416-.778L5.832 5.5H5a.5.5 0 0 1-.416-.777l3-4.5A.5.5 0 0 1 8 0"/>
+                                    </svg>
+                                    <h3 class="fw-bold fs-5">Confiabilidad</h3>
+                                    <p class="small text-muted mb-0">Productos amigables con el medio ambiente y 100% seguros.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold d-flex align-items-center justify-content-center gap-2">
+                        <!-- SVG FUMIGADORA -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="#dc3545" viewBox="0 0 24 24">
+                            <path d="M5 3C3.9 3 3 3.9 3 5V18C3 19.1 3.9 20 5 20H11C12.1 20 13 19.1 13 18V5C13 3.9 12.1 3 11 3H5ZM6 6H10V8H6V6ZM6 10H10V12H6V10ZM15 7H17V12H15V7ZM17 12L20 15V21H18V16L16 14V12H17ZM15 4C15 3.45 15.45 3 16 3H18C18.55 3 19 3.45 19 4V6H15V4Z"/>
+                        </svg>
+                        Nuestros Servicios
+                    </h2>
+                    <p class="fs-5 text-dark fw-semibold mb-1">Desinsectación y desratización en zonas rurales, urbanas, comerciales e industriales</p>
+                    <p class="text-muted small">Planes preventivos y correctivos adaptados a cada tipo de establecimiento</p>
+                </div>
+                <div class="row g-4">
+                    <!-- DESINSECTACIÓN -->
+                    <div class="col-md-4">
+                        <div class="card card-servicio h-100 shadow-sm p-4">
+                            <div class="text-success mb-3">
+                                <!-- SVG INSECTO -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="#198754" viewBox="0 0 24 24">
+                                    <path d="M19 8h-2.18c-.44-1.22-1.23-2.28-2.26-3.05l1.45-1.45a.996.996 0 1 0-1.41-1.41l-1.9 1.9C12.17 3.35 11.11 3 10 3c-1.11 0-2.17.35-3.09.99l-1.9-1.9a.996.996 0 1 0-1.41 1.41l1.45 1.45C4.01 5.72 3.22 6.78 2.78 8H.6a.6.6 0 0 0 0 1.2h1.84c-.15.58-.24 1.18-.24 1.8v1h-1.6a.6.6 0 0 0 0 1.2h1.6v1c0 .62.09 1.22.24 1.8H.6a.6.6 0 0 0 0 1.2h2.18c1.37 3.79 5.04 6.5 9.22 6.5s7.85-2.71 9.22-6.5h2.18a.6.6 0 0 0 0-1.2h-1.84c.15-.58.24-1.18.24-1.8v-1h1.6a.6.6 0 0 0 0-1.2h-1.6v-1c0-.62-.09-1.22-.24-1.8H19.4a.6.6 0 0 0 0-1.2h-.4zm-8 12c-3.87 0-7-3.13-7-7v-2h14v2c0 3.87-3.13 7-7 7zm-7-10V9c0-3.31 2.69-6 6-6s6 2.69 6 6v1H4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold fs-4">Desinsectación</h3>
+                            <p class="text-muted">Erradicación de cucarachas, hormigas, chinches, pulgas, arañas, vinchucas, moscas y mosquitos entre otros.</p>
+                        </div>
+                    </div>
+
+                    <!-- DESRATIZACIÓN -->
+                    <div class="col-md-4">
+                        <div class="card card-servicio h-100 shadow-sm p-4">
+                            <div class="text-danger mb-3">
+                                <!-- SVG ROEDOR -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="#dc3545" viewBox="0 0 24 24">
+                                    <path d="M20 12C20 9.8 18.2 8 16 8C15.4 8 14.8 8.1 14.3 8.4C13.2 6.9 11.5 6 9.5 6C5.9 6 3 8.9 3 12.5C3 13.9 3.4 15.2 4.2 16.3C3.1 17.2 2 18.5 2 20H4C4 18.8 5.1 17.6 6.3 16.8C7.3 17.6 8.6 18 10 18C14.4 18 18 14.4 18 10C18 9.7 18 9.3 17.9 9C19.1 9.2 20 10.5 20 12ZM7.5 11.5C6.7 11.5 6 10.8 6 10C6 9.2 6.7 8.5 7.5 8.5C8.3 8.5 9 9.2 9 10C9 10.8 8.3 11.5 7.5 11.5Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold fs-4">Desratización</h3>
+                            <p class="text-muted">Control preventivo y correctivo de roedores (ratas y ratones) con sistemas seguros y cebos específicos.</p>
+                        </div>
+                    </div>
+
+                    <!-- FINCAS Y FRUTALES -->
+                    <div class="col-md-4">
+                        <div class="card card-servicio h-100 shadow-sm p-4">
+                            <div class="text-warning mb-3">
+                                <!-- SVG ÁRBOLES -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="#ffc107" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V20c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-5.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm-1 17h-1v-4h1v4zm3 0h-1v-4h1v4zm-2-6c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold fs-4">Fincas, Frutales y Campos</h3>
+                            <p class="text-muted">Tratamiento de plagas agrícolas en sectores rurales, parcelas y zonas arboladas de la zona.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN GALERÍA -->
+        <section id="galeria" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold d-flex align-items-center justify-content-center gap-2">
+                        <!-- SVG IMÁGENES -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#198754" viewBox="0 0 16 16">
+                            <path d="M4.502 1a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm-1-1A2 2 0 0 0 1.502 2v15a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M4.802 2A1.3 1.3 0 0 0 3.502 3.3v12.4a1.3 1.3 0 0 0 1.3 1.3h10.4a1.3 1.3 0 0 0 1.3-1.3V3.3a1.3 1.3 0 0 0-1.3-1.3zm-1.3-1A2.3 2.3 0 0 1 5.802 0h8.4a2.3 2.3 0 0 1 2.3 2.3v13.4a2.3 2.3 0 0 1-2.3 2.3h-8.4a2.3 2.3 0 0 1-2.3-2.3z"/>
+                            <path d="M6.002 5.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"/>
+                            <path d="M10.561 8.017a.5.5 0 0 0-.712 0l-2.433 2.502-1.077-1.107a.5.5 0 0 0-.712 0l-1.5 1.5a.5.5 0 1 0 .712.704l1.144-1.143 1.077 1.107a.5.5 0 0 0 .712 0l2.789-2.868 2.144 2.144a.5.5 0 0 0 .708-.707z"/>
+                        </svg>
+                        Equipamiento y Trabajo en Campo
+                    </h2>
+                    <p class="text-muted">Conocé la maquinaria, los insumos profesionales y la aplicación en terreno</p>
+                </div>
+
+                <div class="row g-3">
+                    <script>
+                        for (let i = 1; i <= 13; i++) {
+                            document.write(`
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setCarouselActive(${i - 1})">
+                                        <img src="img/${i}.jpeg" alt="Servicio de Fumigación y Control de Plagas en Jáchal e Iglesia - Foto ${i}" width="100%" height="220" loading="lazy">
+                                        <div class="gallery-overlay">
+                                            <!-- SVG BÚSQUEDA -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL CARRUSEL GALERÍA -->
+        <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark border-0">
+                    <div class="modal-header border-0">
+                        <h3 class="modal-title text-white fs-6 d-flex align-items-center gap-2">
+                            <!-- SVG CÁMARA -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                            </svg>
+                            Galería Jáchal Fumigación
+                        </h3>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div id="carouselGallery" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-inner">
+                                <script>
+                                    for (let i = 1; i <= 13; i++) {
+                                        document.write(`
+                                            <div class="carousel-item ${i === 1 ? 'active' : ''}">
+                                                <img src="img/${i}.jpeg" class="d-block w-100 rounded-bottom" style="max-height: 80vh; object-fit: contain;" alt="Fumigación y Trabajo de Campo Jáchal e Iglesia Foto ${i}">
+                                            </div>
+                                        `);
+                                    }
+                                </script>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev" aria-label="Anterior">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next" aria-label="Siguiente">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN ZONA DE COBERTURA -->
+        <section id="cobertura" class="py-5">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3 d-flex align-items-center justify-content-center gap-2">
+                    <!-- SVG PIN UBICACIÓN -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#dc3545" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/>
+                    </svg>
+                    Zona de Cobertura
+                </h2>
+                <p class="lead text-muted mb-4">Brindamos cobertura integral en los departamentos de <strong>Jáchal e Iglesia</strong></p>
+                
+                <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <span class="badge bg-primary fs-6 p-2 d-inline-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/>
+                        </svg>
+                        Departamento Jáchal
+                    </span>
+                    <span class="badge bg-warning text-dark fs-6 p-2 d-inline-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/>
+                        </svg>
+                        Departamento Iglesia
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h2 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                            <!-- SVG SOBRE CONSULTA -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#0d6efd" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                            </svg>
+                            Envianos tu Consulta
+                        </h2>
+                        <p class="text-muted">Completá el formulario para ponernos en contacto o cotizar tu servicio.</p>
+                        
+                        <!-- FORMULARIO VINCULADO A FORMSPREE -->
+                        <form id="contactForm" action="https://formspree.io/f/xnpnadvp" method="POST">
+                            <div class="mb-3">
+                                <label for="nombreInput" class="form-label font-weight-bold">Nombre Completo</label>
+                                <input type="text" id="nombreInput" name="nombre" class="form-control" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telInput" class="form-label">Teléfono / WhatsApp</label>
+                                <input type="tel" id="telInput" name="telefono" class="form-control" placeholder="Ej: 264 1234567" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="zonaInput" class="form-label">Zona / Localidad</label>
+                                <input type="text" id="zonaInput" name="zona" class="form-control" placeholder="Ej: Villa Mercedes / Rodeo, Iglesia">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensajeInput" class="form-label">Detalle de la consulta / Plaga a tratar</label>
+                                <textarea id="mensajeInput" name="mensaje" class="form-control" rows="4" placeholder="Ej: Necesito desinsectar un local comercial..." required></textarea>
+                            </div>
+                            
+                            <!-- Alerta de éxito/error -->
+                            <div id="formAlert" class="alert d-none mb-3" role="alert"></div>
+
+                            <button type="submit" id="btnSubmitForm" class="btn btn-jf-amarillo btn-lg w-100 shadow d-flex align-items-center justify-content-center gap-2">
+                                <!-- SVG ENVIAR -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.8 14.5a.5.5 0 0 1-.928.01L6.786 8.32 1.343 5.864a.5.5 0 0 1 .01-.928L15.314.036a.5.5 0 0 1 .54.11zM6.636 10.07l2.761 4.338L14.13 2.576zm-1.077-1.1L1.22 6.643 13.424 1.87z"/>
+                                </svg>
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                        <div class="p-4 bg-white rounded-3 border shadow-sm">
+                            <h3 class="fw-bold fs-4 mb-3 d-flex align-items-center gap-2">
+                                <!-- SVG PIN UBICACIÓN -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#dc3545" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/>
+                                </svg>
+                                Nuestra Ubicación
+                            </h3>
+                            
+                            <div class="mb-3">
+                                <p class="fs-6 mb-0 d-flex align-items-center gap-2">
+                                    <!-- SVG EDIFICIO -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6c757d" viewBox="0 0 16 16">
+                                        <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-6 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-6 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                                        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1 1 1H1a1 1 0 0 1 1-1V1zm1 0v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1H3z"/>
+                                    </svg>
+                                    <span><strong>Estamos en:</strong> General Paz 505 (Sur), San José de Jáchal, San Juan</span>
+                                </p>
+                            </div>
+
+                            <!-- MAPA DE GOOGLE MAPS EMBEBIDO -->
+                            <div class="ratio ratio-16x9 rounded-3 overflow-hidden border">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3446.6483983255316!2d-68.75274132443846!3d-30.24710157482214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDE0JzQ5LjYiUyA2OMKwNDUnMDAuNiJX!5e0!3m2!1ses!2sar!4v1789667397675!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 <strong>Jáchal Fumigación</strong> - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP (DERECHA - ICONO ORIGINAL CLÁSICO) -->
+    <a href="https://wa.me/5492644154299?text=Hola!%20Quisiera%20solicitar%20información%20sobre%20los%20servicios%20de%20fumigación." class="btn-wsp" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- BOTÓN FLOTANTE VOLVER ARRIBA (IZQUIERDA) -->
+    <a href="#" id="btnBackToTop" class="btn-back-to-top" title="Volver arriba" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ffffff" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts de interactividad -->
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const formAlert = document.getElementById('formAlert');
+        const btnSubmitForm = document.getElementById('btnSubmitForm');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            btnSubmitForm.disabled = true;
+            btnSubmitForm.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Enviando...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formAlert.className = "alert alert-success mt-3";
+                    formAlert.innerHTML = '¡Gracias! Tu consulta fue enviada con éxito. Te responderemos a la brevedad.';
+                    formAlert.classList.remove('d-none');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            } catch (error) {
+                formAlert.className = "alert alert-danger mt-3";
+                formAlert.innerHTML = 'Ocurrió un error al enviar el mensaje. Por favor intenta por WhatsApp.';
+                formAlert.classList.remove('d-none');
+            } finally {
+                btnSubmitForm.disabled = false;
+                btnSubmitForm.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.8 14.5a.5.5 0 0 1-.928.01L6.786 8.32 1.343 5.864a.5.5 0 0 1 .01-.928L15.314.036a.5.5 0 0 1 .54.11zM6.636 10.07l2.761 4.338L14.13 2.576zm-1.077-1.1L1.22 6.643 13.424 1.87z"/></svg> Enviar Mensaje';
+            }
+        });
+
+        function setCarouselActive(index) {
+            const carouselEl = document.getElementById('carouselGallery');
+            const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+            carousel.to(index);
+        }
+
+        const btnBackToTop = document.getElementById('btnBackToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnBackToTop.classList.add('show');
+            } else {
+                btnBackToTop.classList.remove('show');
+            }
+        });
+
+        btnBackToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
